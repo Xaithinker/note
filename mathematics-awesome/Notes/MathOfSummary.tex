@@ -1,0 +1,133 @@
+\documentclass[10pt,a4paper,UTF8]{ctexart}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{bm}
+\title{Mathematica}
+\author{ZhangXu}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{极限与连续}
+\newcounter{theoremcounter}
+\setcounter{theoremcounter}{1}
+\subsection{数列极限定理}
+\newtheorem{theorem1}{数列极限}[theoremcounter]
+\begin{theorem1}
+对于任意的$\varepsilon>0$(不论它多么小),总存在正整数$N$,使得当
+\\$n>N$时,$|x_n-a|<\varepsilon$恒成立，则称数$a$是数列$\{x_n\}$收敛于$a$,记为\\
+\[ \lim_{n\rightarrow\infty}{x_n=a} \hspace{1pt}\textit{或}\hspace{1pt} x_n\rightarrow a(n\rightarrow \infty). \]
+\\%edited here.12.23.2018 0:40
+% Edit on 12.24.2018
+如果不存在这样的数$a$,就说数列是发散的.\\
+常用的语言是:\[\lim_{n\rightarrow\infty}{x_n=a}\Leftrightarrow \forall_\varepsilon > 0,\exists N\in \bm{N}_+,\textit{当}n>N\textit{时},\textit{恒有}|x_n - a|<\varepsilon. \]
+\end{theorem1}
+
+\addtocounter{theoremcounter}{1}
+\newtheorem{theorem2}{数列收敛}[theoremcounter]
+\begin{theorem2}
+若数列$\{a_n\}$收敛，则其任何子列${a_n}$也收敛,且$\lim\limits_{k\to\infty}{a_{n_k}} = \lim\limits_{n\rightarrow\infty}{a_n}.$ %NOTE:在内联模式中使用Lim的方法
+\end{theorem2}
+
+\addtocounter{theoremcounter}{1}
+\newtheorem{theorem3}{收敛数列性质(唯一性)}[theoremcounter]
+\begin{theorem3}
+给出数列$\{x_n\}$,若$\lim\limits_{n\to\infty}{x_n}=a$存在,则$a$是唯一的.
+\end{theorem3}
+
+\addtocounter{theoremcounter}{1}
+\newtheorem{theorem4}{收敛数列性质(有界性)}[theoremcounter]
+\begin{theorem4}
+若数列$\{x_n\}$,若$\lim\limits_{n\to\infty}{x_n}=a$存在,则$\{x_n\}$有界.
+\end{theorem4}
+
+\addtocounter{theoremcounter}{1}
+\newtheorem{theorem5}{收敛数列性质(保号性)}[theoremcounter]
+\begin{theorem5}
+设数列$\{x_n\}$存在极限$a$,且$a>0($或$a<0)$,则存在正整数$N$,当$n>N$时,有$a_n>0($或$a_n<0)$.
+\end{theorem5}
+
+\newtheorem{theorem6}{推论}
+\begin{theorem6}
+设$a_n\geq 0(n=1,2,...)$,且$\lim\limits_{n\to\infty}{a_n}=a$,则$a\geq 0$.
+\end{theorem6}
+
+\setcounter{theoremcounter}{1}
+\newtheorem{theorem7}{数列极限存在准则}[theoremcounter]
+\begin{theorem7}
+如果数列$\{x_n\},\{y_n\}$及$\{z_n\}$满足下列条件:\\
+$(1)x_n\leq z_n \leq y_n(n=1,2,3,...);(2)\lim\limits_{n\to\infty}{x_n}=a,\lim\limits_{n\to\infty}{y_n}=a$,则数列$\{z_n\}$的极限存在,且$\lim\limits_{n\to\infty}{z_n}=a$.
+\end{theorem7}
+
+\addtocounter{theoremcounter}{1}
+\newtheorem{theorem8}{数列极限存在准则}[theoremcounter]
+\begin{theorem8}
+单调有界数列必有极限.
+\end{theorem8}
+
+\subsection{函数极限定理}
+\setcounter{theoremcounter}{1}
+\subsubsection{函数极限定义}
+设函数$f(x)$在点$x_0$的某一点去心邻域内有定义.若存在常数$A$,对于任意给定的$\varepsilon>0$(不论它多么小),总存在正整数$\delta$,使得当$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式$|f(x)-A|<\varepsilon$,则A就叫做函数$f(x)$,当$x\to x_0$时的极限,记为
+\[ \lim\limits_{x\to x_0}{f(x)}=A\textit{或}f(x)\to A(x\to x_0). \]
+写成$\varepsilon--\delta$语言是:$\lim\limits_{x\to x_0}{f(x)}=A\Leftrightarrow\forall_\varepsilon>0,\exists\delta>0,\textit{当}0<|x-x_0|<\delta\textit{时},|f(x)-A|<\varepsilon$.
+\subsubsection{函数极限存在充要条件}
+\[\lim\limits_{x\to x_0}{f(x)}=A \Leftrightarrow\lim\limits_{x\to x^{-}_0}{f(x)}=A,\lim\limits_{x\to x^{+}_0}{f(x)}=A, \]
+\[\lim\limits_{x\to x_0}{f(x)}=A \Leftrightarrow f(x)=A+\alpha(x),\lim\limits_{x\to x_0}{\alpha(x)}=0.\]
+\subsubsection{函数极限性质}
+\paragraph{唯一性}如果极限$\lim\limits_{x\to x_0}{f(x)}$存在,那么极限唯一.
+\paragraph{局部有界性} 略
+\paragraph{局部保号性} 略
+\subsubsection{无穷大与无穷小}
+\paragraph{无穷大与无穷小比阶}设在同一自变量的变化过程中,
+$\lim{\alpha(x)}=0,\lim{\beta(x)}=0,\textit{且}\beta(x)\neq 0,$则\\
+\\
+(1)若$\lim{\frac{\alpha(x)}{\beta(x)}}=0$,则称$\alpha(x)$是比$\beta(x)$\bm{高阶的无穷小},记为$\alpha(x)=o(\beta(x))$;\\
+\\
+(2)若$\lim{\frac{\alpha(x)}{\beta(x)}}=c\neq 0$,则称$\alpha(x)$是与$\beta(x)$\bm{同阶的无穷小};\\
+\\
+(3)若$\lim{\frac{\alpha(x)}{\beta(x)}}=1$,则称$\alpha(x)$是与$\beta(x)$\bm{等价的无穷小},记为$\alpha(x)\sim o(\beta(x))$;\\
+\\
+(4)若$\lim{\frac{\alpha(x)}{[\beta(x)]^k}}=c\neq 0$,则称$\alpha(x)$是$\beta(x)$的$k$阶无穷小;%12.26.2018 0:02 ERROR:" TeX capacity exceeded, sorry [main memory size=5000000] "
+% 当去掉\bm{k阶无穷小}内容后可正常编译出pdf文件,猜测时由于过多使用\bm{}导致.
+\subsubsection{无穷小运算规则}
+\noindent (1)有限个无穷小的和是无穷小.\\
+(2)有限函数与无穷小的乘积是无穷小.\\
+(3)\underline{有限个}无穷小的乘积是无穷小.
+\subsubsection{无穷小的计算}
+\noindent\textcircled{1} $o(x^m)+o(x^n)=o(x^l),l=\min\{m,n\}$(加减法时低阶吸收``高阶'');\\
+\textcircled{2} 乘法时阶数``累加'';\\
+\textcircled{3} 非零常数不影响阶数;
+\subsubsection{函数极限存在准则--夹逼准则}
+如果函数$f(x),g(x)$及$h(x)$满足下列条件:
+$(1)g(x)\leq f(x)\leq h(x);(2)\lim{g(x)}=A,\lim{h(x)}=A,\textit{则}\lim{f(x)}\textit{存在},\textit{且}\lim{f(x)}=A.$
+\subsubsection{洛必达法则}
+\paragraph{法则一}设(1)当$x\to a$(或$x\to \infty$)时,函数$f(x)$及$F(x)$都趋于零;\\
+(2)$f^{\prime}(x)$及$F^{\prime}(x)$在点$a$的某去心邻域内(或者当$|x|>X$,此时$X$为充分大的正数)存在,且$F^{\prime}(x)\neq 0$;\\
+(3)$\lim\limits_{x\to a}{\frac{f^{\prime}(x)}{F^{\prime}(x)}}(\textit{或}\lim\limits_{x\to \infty}{\frac{f^{\prime}(x)}{F^{\prime}(x)}})$存在或为无穷大,则$\lim\limits_{x\to a}{\frac{f(x)}{F(x)}}=\lim\limits_{x\to a}{\frac{f^{\prime}(x)}{F^{\prime}(x)}}(\textit{或}\lim\limits_{x\to \infty}{\frac{f(x)}{F(x)}}=\lim\limits_{x\to \infty}{\frac{f^{\prime}(x)}{F^{\prime}(x)}}).$
+\paragraph{法则二}设(1)当$x\to a$(或$x\to \infty$)时,函数$f(x)$及$F(x)$都趋于无穷大;\\
+(2)$f^{\prime}(x)$及$F^{\prime}(x)$在点$a$的某去心邻域内(或者当$|x|>X$,此时$X$为充分大的正数)存在,且$F^{\prime}(x)\neq 0$;\\
+(3)$\lim\limits_{x\to a}{\frac{f^{\prime}(x)}{F^{\prime}(x)}}(\textit{或}\lim\limits_{x\to \infty}{\frac{f^{\prime}(x)}{F^{\prime}(x)}})$存在或为无穷大,则$\lim\limits_{x\to a}{\frac{f(x)}{F(x)}}=\lim\limits_{x\to a}{\frac{f^{\prime}(x)}{F^{\prime}(x)}}(\textit{或}\lim\limits_{x\to \infty}{\frac{f(x)}{F(x)}}=\lim\limits_{x\to \infty}{\frac{f^{\prime}(x)}{F^{\prime}(x)}}).$
+\subsubsection{海涅定理(归结原理)}%12.26.2018 17:50.QUIZS:去心邻域的打印\mathring{U}
+设$f(x)$在$\mathring{U}(x_0,\delta)$内有定义,则\\
+\[\lim\limits_{x\to x_0}{f(x)}=A \textit{存在}\Leftrightarrow\textit{对任何以}x_0\textit{为极限的数列}\{x_n\}(x_n\neq x_0),\textit{极限}\lim\limits_{n\to \infty}{f(x_n)}=A\textit{存在.} \]
+
+\subsection{函数连续与间断}
+\subsubsection{连续定义}
+两种定义方法：\\
+(1)设$f(x)$在点$x_0$的某邻域内有定义,若\\
+\[\lim\limits_{\Delta x\to 0}{\Delta y}=\lim\limits_{\Delta x\to 0}{[f(x_0+\Delta x)-f(x_0)]}=0,\]
+则称函数在点$x_0$连续,点$x_0$成为$f(x)$的连续点.\\
+(2)设函数f(x)在点$x_0$的某一邻域内有定义,且有$\lim\limits_{x\to x_0}{f(x)}=f(x_0)$,则称函数$f(x_0)$在点$x_0$处连续.(常用)
+\subsubsection{间断点}
+\begin{math}
+\left\{
+\begin{array}{ll}
+\textit{可去间断点} & \\
+\textit{跳跃间断点} &
+
+\end{array}
+\right\}
+\end{math}
+\end{document}
