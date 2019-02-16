@@ -1,0 +1,46 @@
+\documentclass[10pt,UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{ colorlinks=true, linkcolor=blue, filecolor=gray, urlcolor=blue, citecolor=blue, }
+\title{More on HTML}
+\author{ZhangXu}
+\begin{document}
+\maketitle
+\newcounter{counter}
+
+\section{XHTML}
+\begin{itemize}
+\item XHTML 指的是可扩展超文本标记语言
+\item XHTML 与 HTML 4.01 几乎是相同的
+\item XHTML 是更严格更纯净的 HTML 版本
+\item XHTML 是以 XML 应用的方式定义的 HTML
+\item HTML 是 2001 年 1 月发布的 W3C 推荐标准
+\item XHTML 得到所有主流浏览器的支持
+\end{itemize}
+\subsection{为什么使用XHTML}
+因特网上的很多页面包含了“糟糕”的 HTML。\\
+XML 是一种必须正确标记且格式良好的标记语言。\\
+通过结合 XML 和 HTML 的长处，开发出了 XHTML。XHTML 是作为 XML 被重新设计的 HTML。
+\subsection{区别}
+\paragraph{文档结构}
+\begin{itemize}
+\item XHTML DOCTYPE 是强制性的
+\item $<html>$ 中的 XML namespace 属性是强制性的
+\item $<html>$、$<head>$、$<title>$ 以及 $<body>$ 也是强制性的
+\end{itemize}
+\paragraph{元素语法}
+\begin{itemize}
+\item XHTML 元素必须正确嵌套
+\item XHTML 元素必须始终关闭
+\item XHTML 元素必须小写
+\item XHTML 文档必须有一个根元素
+\end{itemize}
+
+\paragraph{属性语法}
+\begin{itemize}
+\item XHTML 属性必须使用小写
+\item HTML 属性值必须用引号包围
+\item XHTML 属性最小化也是禁止的
+\end{itemize}
+\end{document}
